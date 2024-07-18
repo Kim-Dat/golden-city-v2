@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 62.5%;
 }
 header {
@@ -172,8 +172,14 @@ header {
 
 .nav-right-item {
     list-style: none;
-    margin-right: 24px;
+    padding-right: 12px;
+    border-right: 1px solid var(--color-D9D9D9);
+    margin-right: 12px;
 }
+.nav-right-item:last-child {
+    border: none;
+}
+
 .nav-right-item a {
     text-decoration: none;
     font-weight: 500;
@@ -288,6 +294,7 @@ header {
     border-radius: 8px;
     background-color: var(--color-F5F5F5);
     width: 35px;
+    margin: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -372,16 +379,14 @@ header {
     text-decoration: none;
     border: none;
     text-wrap: nowrap;
+    letter-spacing: 0.4px;
     outline: none;
     padding: 12px 20px;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.5rem;
     background-color: var(--color-9302f2);
     font-weight: 500;
     font-size: 1.5rem;
     color: var(--color-FFFFFF);
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     transition: all ease-out 0.3s;
 }
 .btn-md,
@@ -391,9 +396,6 @@ header {
     outline: none;
     padding: 14px 20px;
     text-wrap: nowrap;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.5rem;
     background-color: var(--color-9302f2);
     font-weight: 500;
     font-size: 1.5rem;
@@ -417,15 +419,13 @@ header {
     text-wrap: nowrap;
     padding: 14px 0;
     width: 100%;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.5rem;
     background-color: var(--color-9302f2);
     font-weight: 500;
     font-size: 1.5rem;
     color: var(--color-FFFFFF);
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     transition: all ease-out 0.3s;
+    letter-spacing: 0.6px;
 }
 .button-outline-lg {
     display: flex;
@@ -438,11 +438,11 @@ header {
     transition: all ease-out 0.3s;
     padding: 14px 30px;
     cursor: pointer;
-
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--color-1A1A1A);
-    line-height: 1.5rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.4px;
 }
 
 .button-outline-lg:hover {
@@ -741,7 +741,7 @@ footer {
 }
 
 .footer-info .logo {
-    width: 102px;
+    width: 90px;
     height: auto;
 }
 .footer-info .name {
@@ -1440,7 +1440,7 @@ footer {
     color: var(--color-1A1A1A);
 }
 .card-lg-price > div > h1 {
-    font-size: 2.2rem /* 16px */;
+    font-size: 2rem /* 16px */;
     line-height: 1.9rem /* 24px */;
     font-weight: 700;
     color: var(--color-9302f2);
@@ -1711,15 +1711,19 @@ footer {
     display: flex;
     align-items: center;
     justify-content: end;
-    padding: 20px;
+    padding: 20px 0;
     margin-bottom: 10px;
 }
 
 .pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #d9d9d9;
     background-color: #fff;
-    color: var(--color-9302f2);
-    padding: 8px 16px;
+    color: var(--color-1A1A1A);
+    padding: 8px 6px;
+    min-width: 35px;
     margin: 0 4px;
     cursor: pointer;
     border-radius: 10px;
@@ -1732,7 +1736,8 @@ footer {
 }
 
 .pagination-btn:hover:not(:disabled) {
-    background-color: #f5f5f5;
+    background-color: var(--color-9302f2);
+    color: var(--color-FFFFFF);
 }
 
 .page-numbers {
@@ -1743,8 +1748,8 @@ footer {
 .page-number {
     border: 1px solid #d9d9d9;
     background-color: #fff;
-    color: var(--color-9302f2);
-    padding: 8px 16px;
+    color: var(--color-1A1A1A);
+    padding: 8px 6px;
     margin: 0 2px;
     cursor: pointer;
     border-radius: 10px;
@@ -1759,4 +1764,5 @@ footer {
 
 .ellipsis {
     margin: 0 4px;
+    border: none;
 }

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const totalPages = 10; 
-    let currentPage = 1;
+    const totalPages = 10; // Số lượng trang tổng cộng
+    let currentPage = 1; // Trang hiện tại
 
     const prevBtn = document.getElementById("prev");
     const nextBtn = document.getElementById("next");
@@ -12,27 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const updatePagination = () => {
             pageNumbersContainer.innerHTML = "";
 
- 
-            if (currentPage > 4) {
-                const firstPageBtn = document.createElement("button");
-                firstPageBtn.className = "pagination-btn";
-                firstPageBtn.textContent = "1";
-                firstPageBtn.addEventListener("click", () => {
-                    currentPage = 1;
-                    updatePagination();
-                });
-                pageNumbersContainer.appendChild(firstPageBtn);
-
-            
-                const ellipsis = document.createElement("span");
-                ellipsis.className = "pagination-btn ellipsis";
-                ellipsis.textContent = "...";
-                pageNumbersContainer.appendChild(ellipsis);
-            }
-
-
-            const startPage = Math.max(2, currentPage - 2);
-            const endPage = Math.min(totalPages - 1, currentPage + 2);
+            // Thêm các nút số trang xung quanh trang hiện tại
+            const startPage = Math.max(1, currentPage);
+            const endPage = Math.min(totalPages, currentPage + 2 );
 
             for (let i = startPage; i <= endPage; i++) {
                 const pageBtn = document.createElement("button");
@@ -48,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 pageNumbersContainer.appendChild(pageBtn);
             }
 
-        
-            if (currentPage < totalPages - 3) {
+            // Thêm dấu ... nếu còn nhiều trang sau
+            if (currentPage < totalPages - 2) {
                 const ellipsis = document.createElement("span");
                 ellipsis.className = "pagination-btn ellipsis";
                 ellipsis.textContent = "...";
@@ -65,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 pageNumbersContainer.appendChild(lastPageBtn);
             }
 
-          
+            // Cập nhật trạng thái của các nút điều hướng
             prevBtn.disabled = currentPage === 1;
             nextBtn.disabled = currentPage === totalPages;
             prevPageBtn.disabled = currentPage === 1;
